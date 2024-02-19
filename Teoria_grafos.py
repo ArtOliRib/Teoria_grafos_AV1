@@ -233,16 +233,20 @@ class Grafo:
         return complemento
 
     def conjunto_independente(self, conjunto_vertices):
-    # Obter o complemento do grafo
+
         complemento = self.complemento_grafo(self.matriz)
 
-    # Verificar se o conjunto de vértices é um clique no complemento
         clique_no_complemento = self.verificar_clique(complemento, conjunto_vertices)
 
         if not clique_no_complemento:
-            print("O conjunto de vértices é um conjunto independente no grafo.")
+       	    		
+            print("Logo conjunto de vértices é um conjunto independente no grafo.")
         else:
-            print("O conjunto de vértices não é um conjunto independente no grafo.")
+            if clique_no_complemento:
+            	print("Porem ")
+            else:
+            	print("Entao ")   
+            print("o conjunto de vértices não é um conjunto independente no grafo.")
 
         return
 # Verificar se um arquivo foi fornecido como argumento
