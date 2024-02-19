@@ -143,10 +143,10 @@ class Grafo:
     def verificar_ciclo(self, sequencia):
         ciclo_bool = True
         if len(sequencia) < 3 or sequencia[0] != sequencia[-1]:
-            ciclo_bool = False  # Verifica se a sequência tem tamanho suficiente e se o primeiro e último vértices são iguais
+            ciclo_bool = False  
 
         if len(set(sequencia)) != len(sequencia) - 1:
-            ciclo_bool = False  # Verifica se há vértices repetidos, exceto o primeiro e último
+            ciclo_bool = False 
 
         for i in range(len(sequencia) - 1):
             if sequencia[i+1] not in self.lista[sequencia[i]]:
@@ -155,7 +155,7 @@ class Grafo:
         if ciclo_bool:
             print("A sequência é um ciclo no grafo.")
         else:
-            print("A sequência não é um ciclo no grafo.")  # Verifica se há uma aresta entre os vértices consecutivos
+            print("A sequência não é um ciclo no grafo.")  
 
         return
 
@@ -163,15 +163,15 @@ class Grafo:
         trilha_bool = True
 
         if len(set(sequencia)) != len(sequencia):
-            trilha_bool = False  # Verifica se há vértices repetidos
+            trilha_bool = False  
 
         arestas_visitadas = set()
         for i in range(len(sequencia) - 1):
             aresta = (sequencia[i], sequencia[i+1])
             if aresta in arestas_visitadas:
-                trilha_bool = False  # Verifica se há arestas repetidas
+                trilha_bool = False  
             if sequencia[i+1] not in self.lista[sequencia[i]]:
-                trilha_bool = False  # Verifica se há uma aresta entre os vértices consecutivos
+                trilha_bool = False  
             arestas_visitadas.add(aresta)
 
         if trilha_bool:
@@ -249,7 +249,7 @@ class Grafo:
             print("o conjunto de vértices não é um conjunto independente no grafo.")
 
         return
-# Verificar se um arquivo foi fornecido como argumento
+
 if len(sys.argv) != 2:
     print("Uso: python meu_programa.py arquivo_grafo.txt")
     sys.exit(1)
@@ -364,6 +364,7 @@ conjunto_vertices = {4,1,3}
 grafo.conjunto_independente(conjunto_vertices)
 
 print("\n------Subgrafo ------\n")
+
 vertices = [0,1,2,3,4]
 arestas = [(0, 1), (0, 2), (1, 0), (1, 3), (1,4), (2,0), (2,4), (3,1), (3,4), (4,1),(4,2),(4,3)]
 subvertices = [0,1,2,3]
